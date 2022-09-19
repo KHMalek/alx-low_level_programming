@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - Swaps integers wih pointers.
+ * puts2 - print every other character of a string
  *
  * @str: is a pointer to a char
  *
