@@ -1,25 +1,31 @@
 #include "main.h"
 
 /**
- * _strstr - locates a substring.
- *
- * @haystack: is a pointer to a char
- * @needle: is a pointer to a char
- *
- * Return: Returns the transformed pointer
- *
-**/
-
+ * _strstr - locate a substring
+ * @haystack: string
+ * @needle: substring
+ * Return: new string
+ */
 char *_strstr(char *haystack, char *needle)
 {
-int i;
+	int x;
 
-	for (i = 0; haystack[i]; i++)
-		if (haystack[i] == needle[0])
-			return (haystack + i);
-
-if (haystack[i] == needle[0])
-	return (haystack + i);
-
-return (0);
+	if (*needle == 0)
+	{
+		return (haystack);
+	}
+	while (*haystack)
+	{
+		x = 0;
+		if (haystack[x] == needle[x])
+		{
+			do {
+				if (needle[x + 1] == '\0')
+					return (haystack);
+				x++;
+			} while (haystack[x] == needle[x]);
+		}
+		haystack++;
+	}
+	return ('\0');
 }
