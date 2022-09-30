@@ -2,32 +2,37 @@
 #include <stdlib.h>
 
 /**
- * main - Prints the sum of n arguments
- *
- * @argc: Number of arguments
- * @argv: Value of arguments
- *
- * Return: Returns an int
-**/
-
+ * main - a program that adds positive numbers.
+ * @argc: argument count
+ * @argv: array of arguments
+ * Return: 0 but if one of the number contains symbols that are
+ * not digits return 1
+ */
 int main(int argc, char *argv[])
 {
+	int sum, num, i, j, k;
 
-int i;
-unsigned int sum = 0;
-
-for (i = 1; i < argc; i++)
-{
-	if (*argv[i] >= 48 && *argv[i] <= 57)
-		sum += atoi(argv[i]);
-	else
+	sum = 0;
+	for (i = 1; i < argc; i++)
 	{
-		printf("Error\n");
-		return (1);
+		for (j = 0; argv[i][j] != '\0'; j++)
+		{
+			if (argv[i][j] > '9' || argv[i][j] < '0')
+			{
+				puts("Error");
+				return (1);
+			}
+		}
 	}
+	for (k = 1; k < argc; k++)
+	{
+		num = atoi(argv[k]);
+		if (num >= 0)
+		{
+			sum += num;
+		}
+	}
+	printf("%d\n", sum);
+	return (0);
 }
-printf("%d\n", sum);
 
-return (sum);
-
-}
