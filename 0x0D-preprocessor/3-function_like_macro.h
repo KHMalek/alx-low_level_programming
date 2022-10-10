@@ -1,19 +1,6 @@
-#include <stdio.h>
-#include "3-function_like_macro.h"
-#include "3-function_like_macro.h"
+#ifndef __3_FUNCTION_LIKE_MACRO_H__
+#define __3_FUNCTION_LIKE_MACRO_H__
 
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	int i;
-	int j;
+#define ABS(X) (((X) < (0)) ? -((X) * (1)) : (X))
 
-	i = ABS(-98) * 10;
-	j = ABS(98) * 10;
-	printf("%d, %d\n", i, j);
-	return (0);
-}
+#endif
